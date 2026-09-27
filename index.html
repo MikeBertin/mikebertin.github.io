@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mike Bertin · Interactive explainers and from-scratch builds</title>
+<meta name="description" content="Interactive explainers and from-scratch builds: Bitcoin, a language model in C, an operating system, the solar system in 3D and more. Everything runs in your browser.">
+<link rel="canonical" href="https://mikebertin.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mikebertin.github.io/">
+<meta property="og:title" content="Mike Bertin · Interactive explainers and from-scratch builds">
+<meta property="og:description" content="Twelve live projects, from Bitcoin and an operating system to the solar system in 3D. Everything runs in your browser.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://mikebertin.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mike Bertin: interactive explainers and things built from scratch, with a gold turtle badge carrying a fleur de lys.">
+<link rel="stylesheet" href="vendor/theme.css">
+<link rel="stylesheet" href="vendor/cards.css">
+<style>
+  /* PROPYLAIA palette, minted 2026-09-27 in OKLCH. Ground L0.16, panel L0.20,
+     accent a warm gold L0.80 C0.11 h85. Provisional: once the coat of arms
+     is redrawn, its tinctures set the accent. */
+  :root {
+    --bg: #0d1016;
+    --panel: #151923;
+    --line: #262c3a;
+    --ink: #e8e9ee;
+    --muted: #9197a6;
+    --accent: #e0b85c;
+    --accent-ink: #1b1405;
+    --measure: 42rem;
+  }
+  body { background-image: radial-gradient(1100px 600px at 20% -10%, #16192a, transparent); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px 56px; }
+
+  header { padding: 72px 0 40px; display: grid; gap: 14px; max-width: var(--measure); }
+  header h1 { margin: 0; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; }
+  header .id { display: flex; align-items: center; gap: 18px; }
+  header .id > div { display: grid; gap: 6px; }
+  header .mark { display: block; width: 58px; height: auto; flex: none; position: relative; top: 5px; }
+  header p { margin: 0; color: var(--muted); font-size: 1.1rem; }
+  header .count { color: var(--accent); font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  section { padding-top: 36px; display: grid; gap: 16px; }
+  section > h2 { margin: 0; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.02em; }
+  section > p { margin: -8px 0 0; color: var(--muted); font-size: 0.95rem; max-width: var(--measure); }
+
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  @media (min-width: 1000px) { .grid.four { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 999px) { .grid.four { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid, .grid.four { grid-template-columns: 1fr; } }
+  a.card { padding: 0; overflow: hidden; }
+  a.card img { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: cover; border-bottom: 1px solid var(--line); background: var(--bg); }
+  .card .body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+  .card .tag { color: var(--accent); }
+  .card h3 { font-size: 17px; }
+  .card p { font-size: 13.5px; }
+  a.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  footer a { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="id">
+    <img class="mark" src="brand/mark-tinctures.svg" alt="" width="58" height="72">
+    <div>
+      <span class="count">12 live projects</span>
+      <h1>Mike Bertin</h1>
+    </div>
+  </div>
+  <p>Interactive explainers and things built from scratch. Every project runs in your browser, and the code for each one is open on GitHub.</p>
+</header>
+
+<main>
+<section aria-labelledby="scratch">
+  <h2 id="scratch">Built from scratch</h2>
+  <p>Big systems rebuilt from the ground up, so you can see every moving part.</p>
+  <div class="grid four">
+    <a class="card" href="https://mikebertin.github.io/hermes/"><img src="https://mikebertin.github.io/hermes/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Cryptography</span><h3>Hermes</h3><p>Bitcoin built from nothing: the curve, signatures, hashing, mining and wallets, each one a live demo.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/prometheus/"><img src="https://mikebertin.github.io/prometheus/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Language models</span><h3>Prometheus</h3><p>A small language model in about 600 lines of C, trained on Shakespeare and writing live in your browser.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/kernel/"><img src="https://mikebertin.github.io/kernel/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Operating systems</span><h3>Kernel</h3><p>An x86 operating system from the boot sector up, with isolated processes, booting live in your browser.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/aegis/"><img src="https://mikebertin.github.io/aegis/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Computer vision</span><h3>Aegis</h3><p>A camera-guided turret: detection, tracking and fire control written by hand, with a safety gate enforced in code.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+  </div>
+</section>
+
+<section aria-labelledby="space">
+  <h2 id="space">Space and physics</h2>
+  <p>Real data and classic simulations you can scrub, poke and break.</p>
+  <div class="grid">
+    <a class="card" href="https://mikebertin.github.io/orrery/"><img src="https://mikebertin.github.io/orrery/og.jpg" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Astronomy</span><h3>Orrery</h3><p>The solar system in real 3D from JPL orbital data. Scrub a century and watch everything move.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/proxima/"><img src="https://mikebertin.github.io/proxima/og.jpg" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Astronomy</span><h3>Proxima</h3><p>Every star within 5 parsecs of the Sun in 3D. Scrub 80,000 years and watch the neighbours change places.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/lynceus/"><img src="https://mikebertin.github.io/lynceus/card.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Astronomy and ML</span><h3>Lynceus</h3><p>Machine learning on real James Webb galaxies, from a shape classifier to a hunt for Little Red Dots.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/chiron/"><img src="https://mikebertin.github.io/chiron/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Physics</span><h3>Chiron</h3><p>Three classic simulations: crystals that grow by random walk, magnets that flip and a box of bouncing molecules.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/eris/"><img src="https://mikebertin.github.io/eris/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Chaos</span><h3>Eris</h3><p>Deterministic chaos in three demos, ending with the tumbling of Saturn's moon Hyperion.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+  </div>
+</section>
+
+<section aria-labelledby="decide">
+  <h2 id="decide">Machines that decide</h2>
+  <p>Control, cooperation and evolution: how simple rules produce smart behaviour.</p>
+  <div class="grid">
+    <a class="card" href="https://mikebertin.github.io/kybernetes/"><img src="https://mikebertin.github.io/kybernetes/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Control theory</span><h3>Kybernetes</h3><p>How to make a machine do what you want: PID, a balancing pendulum, a landing rocket and the Kalman filter.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/agora/"><img src="https://mikebertin.github.io/agora/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Multi-agent systems</span><h3>Agora</h3><p>Negotiation, auctions, voting and matching markets, with a real Python engine running inside the page.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+    <a class="card" href="https://mikebertin.github.io/empedocles/"><img src="https://mikebertin.github.io/empedocles/og.png" alt="" loading="lazy" width="1200" height="630">
+      <span class="body"><span class="tag">Evolution</span><h3>Empedocles</h3><p>Evolution at work: Dawkins' weasel, building blocks and rugged fitness landscapes.</p><span class="open">open <span class="arrow">→</span></span></span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  Code for every project: <a href="https://github.com/mikebertin">github.com/mikebertin</a>
+</footer>
+
+</div>
+</body>
+</html>

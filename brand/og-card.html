@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Hub social card</title>
+<!--
+  Social card source for the hub. Rendered twice by brand/make-cards.sh:
+  1200x630 (og.png, social sites) and 1280x640 (social-preview.png, GitHub's
+  repo preview). The layout is centred and fluid so both crops come from
+  this one design. Goes stale when the project count changes.
+-->
+<style>
+  :root {
+    --bg: #0d1016;
+    --panel: #151923;
+    --line: #262c3a;
+    --ink: #e8e9ee;
+    --muted: #9197a6;
+    --accent: #e0b85c;
+    --mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 100vw; height: 100vh; overflow: hidden; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(900px 620px at 78% 50%, #182038, transparent 70%);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+    padding: 0 110px 0 96px;
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 22px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+  h1 { font-size: 92px; line-height: 1; letter-spacing: -0.015em; margin-bottom: 28px; }
+  .sub { font-size: 31px; line-height: 1.4; color: var(--muted); max-width: 640px; }
+  .list { margin-top: 38px; font-family: var(--mono); font-size: 19px; color: var(--ink); opacity: 0.85; line-height: 1.8; max-width: 660px; }
+  .list span { color: var(--accent); }
+  .list i { font-style: normal; white-space: nowrap; }
+  .mark { height: 440px; width: auto; display: block; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.45)); }
+  .url { position: absolute; left: 96px; bottom: 44px; font-family: var(--mono); font-size: 20px; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div>
+    <div class="kicker">12 live projects</div>
+    <h1>Mike Bertin</h1>
+    <p class="sub">Interactive explainers and things built from scratch. Everything runs in your browser.</p>
+    <p class="list"><i>Bitcoin <span>·</span></i> <i>a language model in C <span>·</span></i> <i>an operating system <span>·</span></i> <i>the solar system in 3D <span>·</span></i> <i>chaos <span>·</span></i> <i>control theory</i></p>
+  </div>
+  <img class="mark" src="mark-tinctures.svg" alt="">
+  <div class="url">mikebertin.github.io</div>
+</body>
+</html>

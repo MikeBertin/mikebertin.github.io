@@ -1,0 +1,14 @@
+# PROPYLAIA is PUBLIC (once Mike confirms the push).
+# Any session must read this line and README's Privacy line before pushing.
+
+CLAUDE.md
+HANDOVER.md
+STATUS.md
+log.md
+
+.env
+.env.*
+node_modules/
+__pycache__/
+.DS_Store
+.claude/worktrees/

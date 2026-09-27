@@ -1,0 +1,50 @@
+/* Theme tokens: the dark ground, body defaults and a reduced-motion guard.
+   Override --accent (and friends) on :root after the import.
+   Aliases for older token names are at the bottom. */
+
+:root {
+  --bg: #0a0a0f;
+  --panel: #13131c;
+  --line: #23232f;
+  --ink: #e7e7ef;
+  --muted: #8a8a9c;
+  --accent: #7cc4ff;
+  --accent-ink: #06121f;
+  --good: #58d68d;
+  --bad: #ff6b6b;
+  --mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  /* aliases kept for pages written against older names */
+  --fg: var(--ink);
+  --border: var(--line);
+  --rule: var(--line);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: radial-gradient(1100px 700px at 60% -10%, #14142a, transparent);
+  background-repeat: no-repeat;
+  color: var(--ink);
+  font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+a { color: var(--accent); }
+
+footer {
+  margin-top: 44px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,24 @@
+<!doctype html><meta charset="utf-8"><title>Mark preview</title>
+<style>
+body{margin:0;background:#0d1016;color:#e8e9ee;font:14px system-ui;padding:24px;display:grid;gap:28px}
+.row{display:flex;gap:28px;align-items:end;flex-wrap:wrap}
+.light{background:#f3f1ea;color:#1b1e27;padding:20px;border-radius:10px}
+figure{margin:0;display:grid;gap:6px;justify-items:center}
+figcaption{font-size:11px;opacity:.6}
+.tint{color:#e0b85c}.tint2{color:#7cc4ff}.tint3{color:#7ee787}.ink{color:#1b1e27}
+</style>
+<div class="row">
+ <figure><img src="mark-tinctures.svg" width="240"><figcaption>tinctures 240</figcaption></figure>
+</div>
+<div class="row" id="one"></div>
+<div class="row"><figure><img src="favicon.svg" width="64"><figcaption>64</figcaption></figure><figure><img src="favicon.svg" width="32"><figcaption>32</figcaption></figure><figure><img src="favicon.svg" width="16"><figcaption>16</figcaption></figure>
+<figure><img src="mark.svg" width="32" style="filter:none"><figcaption>full mark at 32 (black)</figcaption></figure></div>
+<div class="row light" id="lightrow"></div>
+<script>
+fetch('mark.svg?v='+Date.now(),{cache:'no-store'}).then(r=>r.text()).then(s=>{
+  const mk=(cls,w)=>`<figure class="${cls}"><div style="width:${w}px">${s.replace('<svg ','<svg width="'+w+'" ')}</div><figcaption>${cls} ${w}</figcaption></figure>`;
+  document.getElementById('one').innerHTML=mk('tint',240)+mk('tint2',120)+mk('tint3',64)+mk('tint',32);
+  document.getElementById('lightrow').innerHTML=mk('ink',160)+mk('tint2',64)+`<figure><img src="mark-tinctures.svg?v=${Date.now()}" width="160"><figcaption>tinctures on light</figcaption></figure>`;
+});
+document.querySelectorAll('img').forEach(i=>i.src=i.getAttribute('src').split('?')[0]+'?v='+Date.now());
+</script>

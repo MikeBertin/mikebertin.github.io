@@ -1,0 +1,44 @@
+/* Landing-page card grid: each card is a
+   link with a number, a tag, a title and an arrow that slides on hover.
+   Give each card a colour by setting --c on it (inline or via a class). */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (min-width: 900px) { .grid.wide { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 640px) { .grid, .grid.wide { grid-template-columns: 1fr; } }
+
+a.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel, #13131c);
+  border: 1px solid var(--line, #23232f);
+  border-radius: 12px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--ink, #e7e7ef);
+  transition: border-color 0.15s, transform 0.15s;
+  --c: var(--accent, #7cc4ff);
+}
+a.card:hover { border-color: var(--c); transform: translateY(-2px); }
+
+.card .num, .card .tag {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c);
+}
+.card h2, .card h3 { margin: 6px 0 6px; font-size: 16px; }
+.card p { margin: 0 0 10px; color: var(--muted, #8a8a9c); font-size: 12.5px; line-height: 1.5; flex: 1; }
+.card .open {
+  color: var(--c);
+  font-size: 12.5px;
+  font-family: var(--mono, ui-monospace, monospace);
+}
+.card .arrow { display: inline-block; transition: transform 0.15s; }
+a.card:hover .arrow { transform: translateX(4px); }
+
+.card.soon { opacity: 0.55; pointer-events: none; }
